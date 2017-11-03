@@ -1,0 +1,228 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUFFER_SIZE	cgi_server_use_processpool.cpp	/^    static const int BUFFER_SIZE = 1024;$/;"	m	class:cgi_conn	file:	access:private
+BUFFER_SIZE	chat_client.cpp	14;"	d	file:
+BUFFER_SIZE	chat_server_epoll_multiprocess.cpp	19;"	d	file:
+BUFFER_SIZE	chat_server_poll.cpp	17;"	d	file:
+BUFFER_SIZE	epoll_lt_et_test.cpp	16;"	d	file:
+FD_LIMIT	chat_server_epoll_multiprocess.cpp	20;"	d	file:
+FD_LIMIT	chat_server_poll.cpp	18;"	d	file:
+LOCKER_H	locker.h	2;"	d
+MAX_EVENT_NUMBER	chat_server_epoll_multiprocess.cpp	21;"	d	file:
+MAX_EVENT_NUMBER	epoll_lt_et_test.cpp	15;"	d	file:
+MAX_EVENT_NUMBER	processpool.h	/^    static const int MAX_EVENT_NUMBER = 10000;$/;"	m	class:processpool	access:private
+MAX_PROCESS_NUMBER	processpool.h	/^    static const int MAX_PROCESS_NUMBER = 16;$/;"	m	class:processpool	access:private
+PROCESSPOLL_H	processpool.h	2;"	d
+PROCESS_LIMIT	chat_server_epoll_multiprocess.cpp	22;"	d	file:
+THREADPOOL_H	threadpool.h	2;"	d
+USER_LIMIT	chat_server_epoll_multiprocess.cpp	18;"	d	file:
+USER_LIMIT	chat_server_poll.cpp	16;"	d	file:
+USER_PER_PROCESS	processpool.h	/^    static const int USER_PER_PROCESS = 65536;$/;"	m	class:processpool	access:private
+_GNU_SOURCE	chat_client.cpp	1;"	d	file:
+_GNU_SOURCE	chat_server_poll.cpp	1;"	d	file:
+a	chat_server_poll.cpp	/^	int a;$/;"	m	class:abc	file:	access:public
+a	dead_mutex.cpp	/^int a= 0;$/;"	v
+abc	chat_server_poll.cpp	/^class abc$/;"	c	file:
+abc::a	chat_server_poll.cpp	/^	int a;$/;"	m	class:abc	file:	access:public
+abc::b	chat_server_poll.cpp	/^	float b;$/;"	m	class:abc	file:	access:public
+addfd	chat_server_epoll_multiprocess.cpp	/^void addfd(int epollfd,int fd)$/;"	f	signature:(int epollfd,int fd)
+addfd	epoll_lt_et_test.cpp	/^void addfd(int epollfd,int fd,bool enable_et)$/;"	f	signature:(int epollfd,int fd,bool enable_et)
+addfd	processpool.h	/^static void addfd(int epollfd,int fd)$/;"	f	signature:(int epollfd,int fd)
+address	chat_server_epoll_multiprocess.cpp	/^	sockaddr_in address;    \/*客户端的socket 地址*\/$/;"	m	struct:client_data	file:	access:public
+address	chat_server_poll.cpp	/^	sockaddr_in address;$/;"	m	struct:client_data	file:	access:public
+addsig	chat_server_epoll_multiprocess.cpp	/^void addsig(int sig,void(*handler)(int),bool restart = true)$/;"	f	signature:(int sig,void(*handler)(int),bool restart = true)
+addsig	processpool.h	/^static void addsig(int sig,void(handler)(int),bool restart = true)$/;"	f	signature:(int sig,void(handler)(int),bool restart = true)
+another	dead_mutex.cpp	/^void* another(void* arg)$/;"	f	signature:(void* arg)
+append	threadpool.h	/^    bool append(T* request);$/;"	p	class:threadpool	access:public	signature:(T* request)
+append	threadpool.h	/^bool threadpool<T>::append(T* request)$/;"	f	class:threadpool	signature:(T* request)
+b	chat_server_poll.cpp	/^	float b;$/;"	m	class:abc	file:	access:public
+b	dead_mutex.cpp	/^int b= 0;$/;"	v
+buf	chat_server_poll.cpp	/^	char buf[BUFFER_SIZE];$/;"	m	struct:client_data	file:	access:public
+cgi_conn	cgi_server_use_processpool.cpp	/^    cgi_conn(){    }$/;"	f	class:cgi_conn	access:public	signature:()
+cgi_conn	cgi_server_use_processpool.cpp	/^class cgi_conn$/;"	c	file:
+cgi_conn::BUFFER_SIZE	cgi_server_use_processpool.cpp	/^    static const int BUFFER_SIZE = 1024;$/;"	m	class:cgi_conn	file:	access:private
+cgi_conn::cgi_conn	cgi_server_use_processpool.cpp	/^    cgi_conn(){    }$/;"	f	class:cgi_conn	access:public	signature:()
+cgi_conn::init	cgi_server_use_processpool.cpp	/^    void init(int epollfd,int sockfd,const sockaddr_in& client_addr)$/;"	f	class:cgi_conn	access:public	signature:(int epollfd,int sockfd,const sockaddr_in& client_addr)
+cgi_conn::m_address	cgi_server_use_processpool.cpp	/^    sockaddr_in m_address;$/;"	m	class:cgi_conn	file:	access:private
+cgi_conn::m_buf	cgi_server_use_processpool.cpp	/^    char m_buf[BUFFER_SIZE];$/;"	m	class:cgi_conn	file:	access:private
+cgi_conn::m_epollfd	cgi_server_use_processpool.cpp	/^    static int m_epollfd;$/;"	m	class:cgi_conn	file:	access:private
+cgi_conn::m_epollfd	cgi_server_use_processpool.cpp	/^int cgi_conn::m_epollfd = -1;$/;"	m	class:cgi_conn	file:
+cgi_conn::m_read_idx	cgi_server_use_processpool.cpp	/^    int m_read_idx;$/;"	m	class:cgi_conn	file:	access:private
+cgi_conn::m_sockfd	cgi_server_use_processpool.cpp	/^    int m_sockfd;$/;"	m	class:cgi_conn	file:	access:private
+cgi_conn::process	cgi_server_use_processpool.cpp	/^    void process()$/;"	f	class:cgi_conn	access:public	signature:()
+cgi_conn::~cgi_conn	cgi_server_use_processpool.cpp	/^    ~cgi_conn(){    }$/;"	f	class:cgi_conn	access:public	signature:()
+child_term_handler	chat_server_epoll_multiprocess.cpp	/^void child_term_handler(int sig)$/;"	f	signature:(int sig)
+client_data	chat_server_epoll_multiprocess.cpp	/^struct client_data$/;"	s	file:
+client_data	chat_server_poll.cpp	/^struct client_data$/;"	s	file:
+client_data::address	chat_server_epoll_multiprocess.cpp	/^	sockaddr_in address;    \/*客户端的socket 地址*\/$/;"	m	struct:client_data	file:	access:public
+client_data::address	chat_server_poll.cpp	/^	sockaddr_in address;$/;"	m	struct:client_data	file:	access:public
+client_data::buf	chat_server_poll.cpp	/^	char buf[BUFFER_SIZE];$/;"	m	struct:client_data	file:	access:public
+client_data::connfd	chat_server_epoll_multiprocess.cpp	/^	int connfd;             \/*socket 文件描述符*\/$/;"	m	struct:client_data	file:	access:public
+client_data::pid	chat_server_epoll_multiprocess.cpp	/^	pid_t pid;              \/*处理这个连接的子进程的PID*\/$/;"	m	struct:client_data	file:	access:public
+client_data::pipefd	chat_server_epoll_multiprocess.cpp	/^	int pipefd[2];          \/*和父进程通信用的管道*\/$/;"	m	struct:client_data	file:	access:public
+client_data::write_buf	chat_server_poll.cpp	/^	char* write_buf;$/;"	m	struct:client_data	file:	access:public
+cond	locker.h	/^    cond()$/;"	f	class:cond	access:public	signature:()
+cond	locker.h	/^class cond$/;"	c
+cond::cond	locker.h	/^    cond()$/;"	f	class:cond	access:public	signature:()
+cond::m_cond	locker.h	/^    pthread_cond_t m_cond;$/;"	m	class:cond	access:private
+cond::m_mutex	locker.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:cond	access:private
+cond::signal	locker.h	/^    bool signal()$/;"	f	class:cond	access:public	signature:()
+cond::wait	locker.h	/^    bool wait()$/;"	f	class:cond	access:public	signature:()
+cond::~cond	locker.h	/^    ~cond()$/;"	f	class:cond	access:public	signature:()
+connfd	chat_server_epoll_multiprocess.cpp	/^	int connfd;             \/*socket 文件描述符*\/$/;"	m	struct:client_data	file:	access:public
+create	processpool.h	/^    static processpool<T>* create(int listenfd,int process_number = 8)$/;"	f	class:processpool	access:public	signature:(int listenfd,int process_number = 8)
+del_resource	chat_server_epoll_multiprocess.cpp	/^void del_resource()$/;"	f	signature:()
+epollfd	chat_server_epoll_multiprocess.cpp	/^int epollfd;$/;"	v
+et	epoll_lt_et_test.cpp	/^void et(epoll_event* events,int number,int epollfd,int listenfd)$/;"	f	signature:(epoll_event* events,int number,int epollfd,int listenfd)
+handle_error_en	process_signal_with_single_thread.cpp	8;"	d	file:
+init	cgi_server_use_processpool.cpp	/^    void init(int epollfd,int sockfd,const sockaddr_in& client_addr)$/;"	f	class:cgi_conn	access:public	signature:(int epollfd,int sockfd,const sockaddr_in& client_addr)
+listenfd	chat_server_epoll_multiprocess.cpp	/^int listenfd;$/;"	v
+lock	locker.h	/^    bool lock()$/;"	f	class:locker	access:public	signature:()
+locker	locker.h	/^    locker()$/;"	f	class:locker	access:public	signature:()
+locker	locker.h	/^class locker $/;"	c
+locker::lock	locker.h	/^    bool lock()$/;"	f	class:locker	access:public	signature:()
+locker::locker	locker.h	/^    locker()$/;"	f	class:locker	access:public	signature:()
+locker::m_mutex	locker.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:locker	access:private
+locker::unlock	locker.h	/^    bool unlock()$/;"	f	class:locker	access:public	signature:()
+locker::~locker	locker.h	/^    ~locker()$/;"	f	class:locker	access:public	signature:()
+lt	epoll_lt_et_test.cpp	/^void lt(epoll_event* events,int number,int epollfd,int listenfd)$/;"	f	signature:(epoll_event* events,int number,int epollfd,int listenfd)
+m_address	cgi_server_use_processpool.cpp	/^    sockaddr_in m_address;$/;"	m	class:cgi_conn	file:	access:private
+m_buf	cgi_server_use_processpool.cpp	/^    char m_buf[BUFFER_SIZE];$/;"	m	class:cgi_conn	file:	access:private
+m_cond	locker.h	/^    pthread_cond_t m_cond;$/;"	m	class:cond	access:private
+m_epollfd	cgi_server_use_processpool.cpp	/^    static int m_epollfd;$/;"	m	class:cgi_conn	file:	access:private
+m_epollfd	cgi_server_use_processpool.cpp	/^int cgi_conn::m_epollfd = -1;$/;"	m	class:cgi_conn	file:
+m_epollfd	processpool.h	/^    int m_epollfd;$/;"	m	class:processpool	access:private
+m_idx	processpool.h	/^    int m_idx;$/;"	m	class:processpool	access:private
+m_instance	processpool.h	/^    static processpool<T> *m_instance;$/;"	m	class:processpool	access:private
+m_instance	processpool.h	/^processpool<T>* processpool<T>::m_instance = NULL;$/;"	m	class:processpool
+m_listenfd	processpool.h	/^    int m_listenfd;$/;"	m	class:processpool	access:private
+m_max_requests	threadpool.h	/^    int m_max_requests;             \/*请求队列中允许的最大请求数*\/$/;"	m	class:threadpool	access:private
+m_mutex	locker.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:cond	access:private
+m_mutex	locker.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:locker	access:private
+m_pid	processpool.h	/^    pid_t m_pid;$/;"	m	class:process	access:public
+m_pipefd	processpool.h	/^    int m_pipefd[2];$/;"	m	class:process	access:public
+m_process_number	processpool.h	/^    int m_process_number;$/;"	m	class:processpool	access:private
+m_queuelocker	threadpool.h	/^    locker m_queuelocker;           \/*保护请求队列的互斥锁*\/$/;"	m	class:threadpool	access:private
+m_queuestat	threadpool.h	/^    sem m_queuestat;                \/*是否有任务需要处理*\/$/;"	m	class:threadpool	access:private
+m_read_idx	cgi_server_use_processpool.cpp	/^    int m_read_idx;$/;"	m	class:cgi_conn	file:	access:private
+m_sem	locker.h	/^    sem_t m_sem;$/;"	m	class:sem	access:private
+m_sockfd	cgi_server_use_processpool.cpp	/^    int m_sockfd;$/;"	m	class:cgi_conn	file:	access:private
+m_stop	processpool.h	/^    int m_stop;$/;"	m	class:processpool	access:private
+m_stop	threadpool.h	/^    bool m_stop;                    \/*是否结束线程*\/$/;"	m	class:threadpool	access:private
+m_sub_process	processpool.h	/^    process* m_sub_process;$/;"	m	class:processpool	access:private
+m_thread_number	threadpool.h	/^    int m_thread_number;            \/*线程池中的线程数*\/$/;"	m	class:threadpool	access:private
+m_threads	threadpool.h	/^    pthread_t* m_threads;           \/*描述线程池的数组，其大小为m_thread_number*\/$/;"	m	class:threadpool	access:private
+m_workqueue	threadpool.h	/^    std::list<T*> m_workqueue;      \/*请求队列*\/$/;"	m	class:threadpool	access:private
+main	cgi_server_use_processpool.cpp	/^int main(int argc,char* argv[])$/;"	f	signature:(int argc,char* argv[])
+main	chat_client.cpp	/^int main(int argc,char* argv[])$/;"	f	signature:(int argc,char* argv[])
+main	chat_server_epoll_multiprocess.cpp	/^int main(int argc,char* argv[])$/;"	f	signature:(int argc,char* argv[])
+main	chat_server_poll.cpp	/^int main(int argc,char* argv[])$/;"	f	signature:(int argc,char* argv[])
+main	dead_mutex.cpp	/^int main()$/;"	f	signature:()
+main	epoll_lt_et_test.cpp	/^int main(int argc,char* argv[])$/;"	f	signature:(int argc,char* argv[])
+main	process_signal_with_single_thread.cpp	/^int main(int argc,char* argv[])$/;"	f	signature:(int argc,char* argv[])
+mutex_a	dead_mutex.cpp	/^pthread_mutex_t mutex_a;$/;"	v
+mutex_b	dead_mutex.cpp	/^pthread_mutex_t mutex_b;$/;"	v
+pid	chat_server_epoll_multiprocess.cpp	/^	pid_t pid;              \/*处理这个连接的子进程的PID*\/$/;"	m	struct:client_data	file:	access:public
+pipefd	chat_server_epoll_multiprocess.cpp	/^	int pipefd[2];          \/*和父进程通信用的管道*\/$/;"	m	struct:client_data	file:	access:public
+post	locker.h	/^    bool post()$/;"	f	class:sem	access:public	signature:()
+process	cgi_server_use_processpool.cpp	/^    void process()$/;"	f	class:cgi_conn	access:public	signature:()
+process	processpool.h	/^    process() : m_pid(-1)$/;"	f	class:process	access:public	signature:()
+process	processpool.h	/^class process $/;"	c
+process::m_pid	processpool.h	/^    pid_t m_pid;$/;"	m	class:process	access:public
+process::m_pipefd	processpool.h	/^    int m_pipefd[2];$/;"	m	class:process	access:public
+process::process	processpool.h	/^    process() : m_pid(-1)$/;"	f	class:process	access:public	signature:()
+processpool	processpool.h	/^    processpool(int listenfd,int process_number = 8);$/;"	p	class:processpool	access:private	signature:(int listenfd,int process_number = 8)
+processpool	processpool.h	/^class processpool$/;"	c
+processpool	processpool.h	/^processpool<T>::processpool(int listenfd,int process_number) :m_listenfd(listenfd),m_process_number(process_number),m_idx(-1),m_stop(false)$/;"	f	class:processpool	signature:(int listenfd,int process_number)
+processpool::MAX_EVENT_NUMBER	processpool.h	/^    static const int MAX_EVENT_NUMBER = 10000;$/;"	m	class:processpool	access:private
+processpool::MAX_PROCESS_NUMBER	processpool.h	/^    static const int MAX_PROCESS_NUMBER = 16;$/;"	m	class:processpool	access:private
+processpool::USER_PER_PROCESS	processpool.h	/^    static const int USER_PER_PROCESS = 65536;$/;"	m	class:processpool	access:private
+processpool::create	processpool.h	/^    static processpool<T>* create(int listenfd,int process_number = 8)$/;"	f	class:processpool	access:public	signature:(int listenfd,int process_number = 8)
+processpool::m_epollfd	processpool.h	/^    int m_epollfd;$/;"	m	class:processpool	access:private
+processpool::m_idx	processpool.h	/^    int m_idx;$/;"	m	class:processpool	access:private
+processpool::m_instance	processpool.h	/^    static processpool<T> *m_instance;$/;"	m	class:processpool	access:private
+processpool::m_instance	processpool.h	/^processpool<T>* processpool<T>::m_instance = NULL;$/;"	m	class:processpool
+processpool::m_listenfd	processpool.h	/^    int m_listenfd;$/;"	m	class:processpool	access:private
+processpool::m_process_number	processpool.h	/^    int m_process_number;$/;"	m	class:processpool	access:private
+processpool::m_stop	processpool.h	/^    int m_stop;$/;"	m	class:processpool	access:private
+processpool::m_sub_process	processpool.h	/^    process* m_sub_process;$/;"	m	class:processpool	access:private
+processpool::processpool	processpool.h	/^    processpool(int listenfd,int process_number = 8);$/;"	p	class:processpool	access:private	signature:(int listenfd,int process_number = 8)
+processpool::processpool	processpool.h	/^processpool<T>::processpool(int listenfd,int process_number) :m_listenfd(listenfd),m_process_number(process_number),m_idx(-1),m_stop(false)$/;"	f	class:processpool	signature:(int listenfd,int process_number)
+processpool::run	processpool.h	/^    void run();$/;"	p	class:processpool	access:public	signature:()
+processpool::run	processpool.h	/^void processpool<T>::run()$/;"	f	class:processpool	signature:()
+processpool::run_child	processpool.h	/^    void run_child();$/;"	p	class:processpool	access:private	signature:()
+processpool::run_child	processpool.h	/^void processpool<T>::run_child()$/;"	f	class:processpool	signature:()
+processpool::run_parent	processpool.h	/^    void run_parent();$/;"	p	class:processpool	access:private	signature:()
+processpool::run_parent	processpool.h	/^void processpool<T>::run_parent()$/;"	f	class:processpool	signature:()
+processpool::setup_sig_pipe	processpool.h	/^    void setup_sig_pipe();$/;"	p	class:processpool	access:private	signature:()
+processpool::setup_sig_pipe	processpool.h	/^void processpool<T>::setup_sig_pipe()$/;"	f	class:processpool	signature:()
+processpool::~processpool	processpool.h	/^    ~processpool()$/;"	f	class:processpool	access:public	signature:()
+removefd	processpool.h	/^static void removefd(int epollfd,int fd)$/;"	f	signature:(int epollfd,int fd)
+run	processpool.h	/^    void run();$/;"	p	class:processpool	access:public	signature:()
+run	processpool.h	/^void processpool<T>::run()$/;"	f	class:processpool	signature:()
+run	threadpool.h	/^    void run();$/;"	p	class:threadpool	access:private	signature:()
+run_child	chat_server_epoll_multiprocess.cpp	/^int run_child(int idx,client_data* users,char* share_mem)$/;"	f	signature:(int idx,client_data* users,char* share_mem)
+run_child	processpool.h	/^    void run_child();$/;"	p	class:processpool	access:private	signature:()
+run_child	processpool.h	/^void processpool<T>::run_child()$/;"	f	class:processpool	signature:()
+run_parent	processpool.h	/^    void run_parent();$/;"	p	class:processpool	access:private	signature:()
+run_parent	processpool.h	/^void processpool<T>::run_parent()$/;"	f	class:processpool	signature:()
+sem	locker.h	/^    sem()$/;"	f	class:sem	access:public	signature:()
+sem	locker.h	/^class sem$/;"	c
+sem::m_sem	locker.h	/^    sem_t m_sem;$/;"	m	class:sem	access:private
+sem::post	locker.h	/^    bool post()$/;"	f	class:sem	access:public	signature:()
+sem::sem	locker.h	/^    sem()$/;"	f	class:sem	access:public	signature:()
+sem::wait	locker.h	/^    bool wait()$/;"	f	class:sem	access:public	signature:()
+sem::~sem	locker.h	/^    ~sem()$/;"	f	class:sem	access:public	signature:()
+setnonblocking	chat_server_epoll_multiprocess.cpp	/^int setnonblocking(int fd)$/;"	f	signature:(int fd)
+setnonblocking	chat_server_poll.cpp	/^int setnonblocking(int fd)$/;"	f	signature:(int fd)
+setnonblocking	epoll_lt_et_test.cpp	/^int setnonblocking(int fd)$/;"	f	signature:(int fd)
+setnonblocking	processpool.h	/^static int setnonblocking(int fd)$/;"	f	signature:(int fd)
+setup_sig_pipe	processpool.h	/^    void setup_sig_pipe();$/;"	p	class:processpool	access:private	signature:()
+setup_sig_pipe	processpool.h	/^void processpool<T>::setup_sig_pipe()$/;"	f	class:processpool	signature:()
+share_mem	chat_server_epoll_multiprocess.cpp	/^char* share_mem = 0;$/;"	v
+shm_name	chat_server_epoll_multiprocess.cpp	/^static const char* shm_name = "\/my_shm";$/;"	v	file:
+shmfd	chat_server_epoll_multiprocess.cpp	/^int shmfd;$/;"	v
+sig_handler	chat_server_epoll_multiprocess.cpp	/^void sig_handler(int sig)$/;"	f	signature:(int sig)
+sig_handler	processpool.h	/^static void sig_handler(int sig)$/;"	f	signature:(int sig)
+sig_pipefd	chat_server_epoll_multiprocess.cpp	/^int sig_pipefd[2];$/;"	v
+sig_pipefd	processpool.h	/^static int sig_pipefd[2];$/;"	v
+sig_thread	process_signal_with_single_thread.cpp	/^static void *sig_thread(void *arg)$/;"	f	file:	signature:(void *arg)
+signal	locker.h	/^    bool signal()$/;"	f	class:cond	access:public	signature:()
+stop_child	chat_server_epoll_multiprocess.cpp	/^bool stop_child  = false;$/;"	v
+sub_process	chat_server_epoll_multiprocess.cpp	/^int* sub_process = 0;$/;"	v
+threadpool	threadpool.h	/^    threadpool(int thread_number = 8,int max_requests = 10000);$/;"	p	class:threadpool	access:public	signature:(int thread_number = 8,int max_requests = 10000)
+threadpool	threadpool.h	/^class threadpool$/;"	c
+threadpool	threadpool.h	/^threadpool<T>::threadpool(int thread_number,int max_requests):$/;"	f	class:threadpool	signature:(int thread_number,int max_requests)
+threadpool::append	threadpool.h	/^    bool append(T* request);$/;"	p	class:threadpool	access:public	signature:(T* request)
+threadpool::append	threadpool.h	/^bool threadpool<T>::append(T* request)$/;"	f	class:threadpool	signature:(T* request)
+threadpool::m_max_requests	threadpool.h	/^    int m_max_requests;             \/*请求队列中允许的最大请求数*\/$/;"	m	class:threadpool	access:private
+threadpool::m_queuelocker	threadpool.h	/^    locker m_queuelocker;           \/*保护请求队列的互斥锁*\/$/;"	m	class:threadpool	access:private
+threadpool::m_queuestat	threadpool.h	/^    sem m_queuestat;                \/*是否有任务需要处理*\/$/;"	m	class:threadpool	access:private
+threadpool::m_stop	threadpool.h	/^    bool m_stop;                    \/*是否结束线程*\/$/;"	m	class:threadpool	access:private
+threadpool::m_thread_number	threadpool.h	/^    int m_thread_number;            \/*线程池中的线程数*\/$/;"	m	class:threadpool	access:private
+threadpool::m_threads	threadpool.h	/^    pthread_t* m_threads;           \/*描述线程池的数组，其大小为m_thread_number*\/$/;"	m	class:threadpool	access:private
+threadpool::m_workqueue	threadpool.h	/^    std::list<T*> m_workqueue;      \/*请求队列*\/$/;"	m	class:threadpool	access:private
+threadpool::run	threadpool.h	/^    void run();$/;"	p	class:threadpool	access:private	signature:()
+threadpool::threadpool	threadpool.h	/^    threadpool(int thread_number = 8,int max_requests = 10000);$/;"	p	class:threadpool	access:public	signature:(int thread_number = 8,int max_requests = 10000)
+threadpool::threadpool	threadpool.h	/^threadpool<T>::threadpool(int thread_number,int max_requests):$/;"	f	class:threadpool	signature:(int thread_number,int max_requests)
+threadpool::worker	threadpool.h	/^    static void* worker(void* arg);$/;"	p	class:threadpool	access:private	signature:(void* arg)
+threadpool::~threadpool	threadpool.h	/^    ~threadpool();$/;"	p	class:threadpool	access:public	signature:()
+threadpool::~threadpool	threadpool.h	/^threadpool<T>::~threadpool()$/;"	f	class:threadpool	signature:()
+unlock	locker.h	/^    bool unlock()$/;"	f	class:locker	access:public	signature:()
+user_count	chat_server_epoll_multiprocess.cpp	/^int user_count = 0;$/;"	v
+users	chat_server_epoll_multiprocess.cpp	/^client_data* users = 0;$/;"	v
+wait	locker.h	/^    bool wait()$/;"	f	class:cond	access:public	signature:()
+wait	locker.h	/^    bool wait()$/;"	f	class:sem	access:public	signature:()
+worker	threadpool.h	/^    static void* worker(void* arg);$/;"	p	class:threadpool	access:private	signature:(void* arg)
+write_buf	chat_server_poll.cpp	/^	char* write_buf;$/;"	m	struct:client_data	file:	access:public
+~cgi_conn	cgi_server_use_processpool.cpp	/^    ~cgi_conn(){    }$/;"	f	class:cgi_conn	access:public	signature:()
+~cond	locker.h	/^    ~cond()$/;"	f	class:cond	access:public	signature:()
+~locker	locker.h	/^    ~locker()$/;"	f	class:locker	access:public	signature:()
+~processpool	processpool.h	/^    ~processpool()$/;"	f	class:processpool	access:public	signature:()
+~sem	locker.h	/^    ~sem()$/;"	f	class:sem	access:public	signature:()
+~threadpool	threadpool.h	/^    ~threadpool();$/;"	p	class:threadpool	access:public	signature:()
+~threadpool	threadpool.h	/^threadpool<T>::~threadpool()$/;"	f	class:threadpool	signature:()

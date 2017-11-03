@@ -49,7 +49,7 @@ int setnonblocking(int fd)
 	int old_option = fcntl(fd,F_GETFL);
 	int new_option = old_option | O_NONBLOCK;
 	fcntl(fd,F_SETFL,new_option);
-	return old_optioin;
+	return old_option;
 }
 
 void addfd(int epollfd,int fd)
@@ -226,10 +226,10 @@ int main(int argc,char* argv[])
 	assert(epollfd != -1);
 	addfd(epollfd,listenfd);
 	
-	ret = socketpair(PF_UNIX,SOCK_STREAM,0,pipefd);
+	ret = socketpair(PF_UNIX,SOCK_STREAM,0,sig_pipefd);
 	assert(ret != -1);
-	setnonblocking(pipefd[1]);
-	addfd(epollfd,pipefd[0]);
+	setnonblocking(sig_pipefd[1]);
+	addfd(epollfd,sig_pipefd[0]);
 
 	addsig(SIGCHLD,sig_handler);
 	addsig(SIGPIPE,SIG_IGN);
@@ -243,7 +243,7 @@ int main(int argc,char* argv[])
     /*创建共享内存，作为所有客户socket连接的读缓存*/
     shmfd = shm_open(shm_name,O_CREAT | O_RDWR,0666);
     assert(shmfd != -1);
-    ret = ftrucate(shmfd,USER_LIMIT*BUFFER_SIZE);
+    ret = ftruncate(shmfd,USER_LIMIT*BUFFER_SIZE);
     assert(ret != -1);
 
     share_mem = (char*)mmap(NULL,USER_LIMIT*BUFFER_SIZE,PROT_READ | PROT_WRITE,MAP_SHARED,shmfd,0);
@@ -355,6 +355,7 @@ int main(int argc,char* argv[])
                                     close(users[del_user].pipefd[0]);
                                     users[del_user] = users[--user_count];
                                     sub_process[users[del_user].pid] = del_user;
+                                    printf("client %d exit!now has %d user\n",pid,user_count);
                                 }
                                 if(terminate && user_count == 0)
                                 {
