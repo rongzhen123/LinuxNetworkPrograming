@@ -68,7 +68,7 @@ void http_conn::init(int sockfd,const sockaddr_in& addr)
     m_address = addr;
     /*如下两行是为了避免TIME_WAIT状态，仅用于调试，实际使用时应该去掉*/
     int reuse = 1;
-    setsockopt(m_sockfd,SO_SOCKET,SO_REUSEADDR,&reuse,sizeof(reuse));
+    setsockopt(m_sockfd,SOL_SOCKET,SO_REUSEADDR,&reuse,sizeof(reuse));
     addfd(m_epollfd,sockfd,true);
     m_user_count++;
     init();
@@ -181,7 +181,7 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char* text)
     {
         return BAD_REQUEST;
     }
-    *m_version++ '\0';
+    *m_version++ = '\0';
     m_version += strspn(m_version," \t");
     if(strcasecmp(m_version,"HTTP/1.1") != 0)
     {
@@ -425,6 +425,124 @@ bool http_conn::add_status_line(int status,const char* title)
 
 bool http_conn::add_headers(int content_len)
 {
+    add_content_length(content_len);
+    add_linger();
+    add_blank_line();
+}
+
+bool http_conn::add_content_length(int content_len)
+{
     return add_response("Content-Length: %d\r\n",content_len);
+}
+
+bool http_conn::add_linger()
+{
+    return add_response("Connection: %s\r\n",(m_linger == true ) ? "keep-alive" : "close");
+}
+
+bool http_conn::add_blank_line()
+{
+    return add_response("%s","\r\n");
+}
+
+bool http_conn::add_content(const char* content)
+{
+    return add_response("%s",content);
+}
+
+/*根据服务器处理HTTP请求的结果，决定返回给客户端的内容*/
+bool http_conn::process_write(HTTP_CODE ret)
+{
+    switch(ret)
+    {
+        case INTERNAL_ERROR:
+        {
+            add_status_line(500,error_500_title);
+            add_headers(strlen(error_500_form));
+            if(!add_content(error_500_form))
+            {
+                return false;
+            }
+            break;
+        }
+        case BAD_REQUEST:
+        {
+            add_status_line(400,error_400_title);
+            add_headers(strlen(error_400_form));
+            if(!add_content(error_400_form))
+            {
+                return false;
+            }
+            break;
+        }
+        case NO_RESOURCE:
+        {
+            add_status_line(404,error_404_title);
+            add_headers(strlen(error_404_form));
+            if(!add_content(error_404_form))
+            {
+                return false;
+            }
+            break;
+        }
+        case FORBIDDEN_REQUEST:
+        {
+            add_status_line(403,error_403_title);
+            add_headers(strlen(error_403_form));
+            if(!add_content(error_403_form))
+            {
+                return false;
+            }
+            break;
+        }
+        case FILE_REQUEST:
+        {
+            add_status_line(200,ok_200_title);
+            if(m_file_stat.st_size != 0)
+            {
+                add_headers(m_file_stat.st_size);
+                m_iv[0].iov_base = m_write_buf;
+                m_iv[0].iov_len = m_write_idx;
+                m_iv[1].iov_base = m_file_address;
+                m_iv[1].iov_len = m_file_stat.st_size;
+                m_iv_count = 2;
+                return true;
+            }
+            else
+            {
+                const char* ok_string = "<html><body></body></html>";
+                add_headers(strlen(ok_string));
+                if(!add_content(ok_string))
+                {
+                    return false;
+                }
+            }
+        }
+        default:
+        {
+            return false;
+        }
+    }
+    m_iv[0].iov_base = m_write_buf;
+    m_iv[0].iov_len = m_write_idx;
+    m_iv_count = 1;
+    return true;
+}
+
+/*由线程池中的工作线程调用，这是处理HTTP请求的入口函数*/
+void http_conn::process()
+{
+    HTTP_CODE read_ret = process_read();
+    if(read_ret == NO_REQUEST)
+    {
+        modfd(m_epollfd,m_sockfd,EPOLLIN);
+        return;
+    }
+    bool write_ret = process_write(read_ret);
+    if(!write_ret)
+    {
+        close_conn();
+    }
+    modfd(m_epollfd,m_sockfd,EPOLLOUT);
 }
 

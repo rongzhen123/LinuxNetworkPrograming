@@ -65,7 +65,7 @@ public:
 public:
     http_conn() {   }
     ~http_conn() {    }
-
+public:
     /*初始化新接受的连接*/
     void init(int sockfd,const sockaddr_in& addr);
     /*关闭连接*/
@@ -91,12 +91,13 @@ private:
     HTTP_CODE parse_content(char* text);
     HTTP_CODE do_request();
     char* get_line() {     return m_read_buf + m_start_line;    }
+    LINE_STATUS parse_line();
 
     /*下面一组函数被process_write 调用以填充HTTP应答*/
     void unmap();
     bool add_response(const char* format,...);
     bool add_content(const char* content);
-    bool adds_status(int status,const char* title);
+    bool add_status_line(int status,const char* title);
     bool add_headers(int content_length);
     bool add_content_length(int content_length);
     bool add_linger();
